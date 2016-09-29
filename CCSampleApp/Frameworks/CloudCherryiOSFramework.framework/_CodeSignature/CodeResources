@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		Uz81XBxa17NP/4GanQUORaF490E=
+		5gG3bGH9/e2BJPmI22S4jhWpwm4=
 		</data>
 		<key>Headers/CloudCherryiOSFramework-Swift.h</key>
 		<data>
@@ -18,15 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5y+rmcTQaE59ANXknUmGT5rU5ZM=
-		</data>
-		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm.swiftdoc</key>
-		<data>
-		jwRjXm/Kg2aOq4lQuwrPztt9600=
-		</data>
-		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm.swiftmodule</key>
-		<data>
-		vksuUbj0NOQve9H+cW9TNjIi4dg=
+		QC1CFsE9qcT+tX1hF2FVNXWCcdA=
 		</data>
 		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,7 +26,7 @@
 		</data>
 		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		x6mrGA4U4DmVxGKWl3ZjpUHML1U=
+		PykNa6iDIOxxbnsg7XHuehDsUXA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,11 +39,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Uz81XBxa17NP/4GanQUORaF490E=
+			5gG3bGH9/e2BJPmI22S4jhWpwm4=
 			</data>
 			<key>hash2</key>
 			<data>
-			3w2mp994HxA+liOKm0PDYztuLIMm2bEvvJeb5Th63m8=
+			BxB2+heFunmWgXHOz8ZIrIEjnD5VYEAipenf4NPufIM=
 			</data>
 		</dict>
 		<key>Headers/CloudCherryiOSFramework-Swift.h</key>
@@ -76,28 +68,6 @@
 			L1ctCENVcGTCMMjQS0jpkK13CXv0Lke2cfltIqKwR5c=
 			</data>
 		</dict>
-		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			jwRjXm/Kg2aOq4lQuwrPztt9600=
-			</data>
-			<key>hash2</key>
-			<data>
-			q1bVLlsZidgGibJMXQ7843OIi8qkZO+2VBalaFWESHw=
-			</data>
-		</dict>
-		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			vksuUbj0NOQve9H+cW9TNjIi4dg=
-			</data>
-			<key>hash2</key>
-			<data>
-			D5JVZ+mdFatLIL+9LtGux+yeNotGXRYKfkfB+QWhAwQ=
-			</data>
-		</dict>
 		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
@@ -113,11 +83,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			x6mrGA4U4DmVxGKWl3ZjpUHML1U=
+			PykNa6iDIOxxbnsg7XHuehDsUXA=
 			</data>
 			<key>hash2</key>
 			<data>
-			T8tZ0PSHkdqbQRwpaYiCljOCjogbf8krn26YIre+Iwg=
+			JjUUm6UCB/B7Tm020zOHjq46Bpwra4ZGuwUY6megGhA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

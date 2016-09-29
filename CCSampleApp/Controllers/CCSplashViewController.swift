@@ -49,6 +49,15 @@ class CCSplashViewController: UIViewController {
         self.view.insertSubview(aBackgroundImageView, atIndex: 0)
         
         
+        // Adding Top White Line
+        
+        
+        let aWhiteLine = UIView(frame: CGRect(x: 50, y: 50, width: self.view.frame.width - 100, height: 1))
+        aWhiteLine.backgroundColor = UIColor.whiteColor()
+        
+        self.view.addSubview(aWhiteLine)
+        
+        
         // Adding Button To View To Start Survey
         
         
