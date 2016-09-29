@@ -105,10 +105,15 @@ SWIFT_CLASS("_TtC23CloudCherryiOSFramework8CCSurvey")
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 
-/// Sets the username and password for CloudCherry
+/// Initializes SDK using the username and password for CloudCherry
 - (nonnull instancetype)initWithIUsername:(NSString * _Nonnull)iUsername iPassword:(NSString * _Nonnull)iPassword OBJC_DESIGNATED_INITIALIZER;
+
+/// Initializes SDK using Static token generated from Dashboard
+- (nonnull instancetype)initWithIStaticToken:(NSString * _Nonnull)iStaticToken OBJC_DESIGNATED_INITIALIZER;
+
+/// Sets prefill details
+- (void)setPrefill:(NSString * _Nonnull)iEmail iMobileNumber:(NSString * _Nonnull)iMobileNumber;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)showLoading;
 @end
 
 @class UIImage;

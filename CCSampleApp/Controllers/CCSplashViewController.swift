@@ -90,6 +90,8 @@ class CCSplashViewController: UIViewController {
     func surveyStartButtonTapped() {
         
         let aSurvey = CCSurvey(iUsername: _USERNAME, iPassword: _PASSWORD)
+//        let aSurvey = CCSurvey(iStaticToken: "ROHITH-50000")
+        aSurvey.setPrefill("vishalchandran@gmail.com", iMobileNumber: "8095890684")
         self.navigationController?.pushViewController(aSurvey, animated: false)
         
     }
