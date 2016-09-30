@@ -114,6 +114,9 @@ SWIFT_CLASS("_TtC23CloudCherryiOSFramework8CCSurvey")
 /// Sets prefill details
 - (void)setPrefill:(NSString * _Nonnull)iEmail iMobileNumber:(NSString * _Nonnull)iMobileNumber;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+
+/// Sets Config Data
+- (void)setConfig:(NSInteger)iValidUses iLocation:(NSString * _Nonnull)iLocation;
 @end
 
 @class UIImage;

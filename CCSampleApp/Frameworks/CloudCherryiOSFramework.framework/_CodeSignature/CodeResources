@@ -10,7 +10,7 @@
 		</data>
 		<key>Headers/CloudCherryiOSFramework-Swift.h</key>
 		<data>
-		XZm4Q4Tt/PySuCfugTwEadU5r6Q=
+		fuymu67yC3IZX9/vWdjK+N2HRlg=
 		</data>
 		<key>Headers/CloudCherryiOSFramework.h</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		Jh5NE8pR5tBw/LxxAIhuho/6cdE=
+		rPraZBTvA9OXbBa5wZ/Y7dkUx0A=
 		</data>
 		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		mmZATiSQtv5DDZ4v7Mcb68F/fMc=
+		Jz9T1iGo/TvwiaQqf+f8Wc6uQy8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,11 +50,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XZm4Q4Tt/PySuCfugTwEadU5r6Q=
+			fuymu67yC3IZX9/vWdjK+N2HRlg=
 			</data>
 			<key>hash2</key>
 			<data>
-			mRS33NalkVsqJ3jOYeSRMd3lypYastK1rbNUKCSpegY=
+			/TQngZS35vwumzvfdsS2UsDIFrGTeK1TUEHJJBQtGLI=
 			</data>
 		</dict>
 		<key>Headers/CloudCherryiOSFramework.h</key>
@@ -72,22 +72,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Jh5NE8pR5tBw/LxxAIhuho/6cdE=
+			rPraZBTvA9OXbBa5wZ/Y7dkUx0A=
 			</data>
 			<key>hash2</key>
 			<data>
-			GFzDgOkjiHceuE68RKvOEXodg4ojt81e8GLX5WW1S38=
+			6/Od0skSLs7PNHHLZK8tsL4lXc9hxWVz6HcI/OYt3Ow=
 			</data>
 		</dict>
 		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mmZATiSQtv5DDZ4v7Mcb68F/fMc=
+			Jz9T1iGo/TvwiaQqf+f8Wc6uQy8=
 			</data>
 			<key>hash2</key>
 			<data>
-			LBVUbcrKXO+vQeJBu59BfGfzgJB+4VOpoKLiSSqqzCk=
+			Q5b1H2a0xvP2KorhPW3ClWzl0Vd/e0UQGmPIzG4dvGg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -19,7 +19,7 @@ class CCAppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        NSThread.sleepForTimeInterval(3.0)
+        NSThread.sleepForTimeInterval(2.0)
 
         
         // Setting White Status Bar
