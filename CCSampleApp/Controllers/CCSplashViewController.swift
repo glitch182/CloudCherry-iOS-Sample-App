@@ -35,8 +35,9 @@ class CCSplashViewController: UIViewController {
     // MARK: - Outlets
     
     
-    var statusLabel = UILabel()
-    var tappedButton = UIButton()
+    var tokenToggleSwitch = UISwitch()
+    var staticTokenToggleLabel = UILabel()
+    var staticTokenTextField = UITextField()
     
     
     // MARK: - View Life Cycle Methods
@@ -71,45 +72,24 @@ class CCSplashViewController: UIViewController {
         self.view.addSubview(aWhiteLine)
         
         
-//        // Adding Option Buttons for Static/Dynamic Initalizaiton
-//        
-//        
-//        let aStaticButton = UIButton(type: .Custom)
-//        aStaticButton.frame = CGRect(x: 10, y: CGRectGetMaxY(aWhiteLine.frame) + 20, width: 100, height: 50)
-//        aStaticButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-//        aStaticButton.setTitle("STATIC", forState: .Normal)
-//        aStaticButton.tag = 1
-//        aStaticButton.layer.borderColor = UIColor.whiteColor().CGColor
-//        aStaticButton.layer.borderWidth = 1.0
-//        aStaticButton.addTarget(self, action: #selector(CCSplashViewController.statusButtonToggle(_:)), forControlEvents: .TouchUpInside)
-//        
-//        self.view.addSubview(aStaticButton)
-//        
-//        
-//        let aDynamicButton = UIButton(type: .Custom)
-//        aDynamicButton.frame = CGRect(x: self.view.frame.width - 105, y: CGRectGetMaxY(aWhiteLine.frame) + 20, width: 100, height: 50)
-//        aDynamicButton.setTitleColor(UIColor.redColor(), forState: .Normal)
-//        aDynamicButton.backgroundColor = UIColor.whiteColor()
-//        aDynamicButton.setTitle("DYNAMIC", forState: .Normal)
-//        aDynamicButton.tag = 2
-//        aDynamicButton.layer.borderColor = UIColor.whiteColor().CGColor
-//        aDynamicButton.layer.borderWidth = 1.0
-//        aDynamicButton.addTarget(self, action: #selector(CCSplashViewController.statusButtonToggle(_:)), forControlEvents: .TouchUpInside)
-//        
-//        tappedButton = aDynamicButton
-//        
-//        self.view.addSubview(aDynamicButton)
-//        
-//        
-//        // Setting Token Status Label
-//        
-//        
-//        statusLabel = UILabel(frame: CGRect(x: 0, y: CGRectGetMaxY(aDynamicButton.frame) + 20, width: self.view.frame.width, height: 20))
-//        statusLabel.textColor = UIColor.whiteColor()
-//        statusLabel.text = "Using Dynamic Token"
-//        statusLabel.textAlignment = .Center
-//        
-//        self.view.addSubview(statusLabel)
+        // Adding Option Buttons for Static/Dynamic Initalizaiton
+        
+        
+        staticTokenToggleLabel = UILabel(frame: CGRect(x: 20, y: CGRectGetMaxY(aWhiteLine.frame) + 25, width: self.view.frame.width - 40, height: 20))
+        staticTokenToggleLabel.font = UIFont.systemFontOfSize(15)
+        staticTokenToggleLabel.textColor = UIColor.whiteColor()
+        staticTokenToggleLabel.text = "Static Token - OFF"
+        
+        self.view.addSubview(staticTokenToggleLabel)
+        
+        
+        tokenToggleSwitch = UISwitch(frame: CGRect(x: self.view.frame.width - 70, y: CGRectGetMaxY(aWhiteLine.frame) + 20, width: 50, height: 20))
+        tokenToggleSwitch.onTintColor = UIColor(red: 227/255, green: 99/255, blue: 109/255, alpha: 1.0)
+        tokenToggleSwitch.addTarget(self, action: #selector(CCSplashViewController.staticTokenSwitchToggled(_:)), forControlEvents: .ValueChanged)
+        
+        self.view.addSubview(tokenToggleSwitch)
+        
+        
         
         
         // Adding Button To View To Start Survey
@@ -138,57 +118,91 @@ class CCSplashViewController: UIViewController {
     }
     
     
+    // MARK: - Touches Method
+    
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
+    
+    
     // MARK:- Private Methods
     
     
     func surveyStartButtonTapped() {
         
-        if (isDynamic) {
+        self.view.endEditing(true)
+        
+        if (tokenToggleSwitch.on) {
             
-            let aSurvey = CCSurvey(iUsername: _USERNAME, iPassword: _PASSWORD)
-            aSurvey.setPrefill("vishalchandran@gmail.com", iMobileNumber: "8095890684")
-            aSurvey.setConfig(-1, iLocation: "mobile")
-            self.navigationController?.pushViewController(aSurvey, animated: false)
+            if (staticTokenTextField.text == "") {
+                
+                let anAlert = UIAlertController(title: "Alert", message: "Please enter a valid Static Token", preferredStyle: .Alert)
+                anAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(anAlert, animated: true, completion: nil)
+                
+            } else {
+                
+                CloudCherrySDK().setStaticToken(staticTokenTextField.text!)
+                CloudCherrySDK().showSurveyInController(self)
+                
+            }
             
         } else {
             
-            let aSurvey = CCSurvey(iStaticToken: "ROHITH-50000")
-            aSurvey.setPrefill("vishalchandran@gmail.com", iMobileNumber: "8095890684")
-            aSurvey.setConfig(-1, iLocation: "mobile")
-            self.navigationController?.pushViewController(aSurvey, animated: false)
+            CloudCherrySDK().setCredentials(_USERNAME, iPassword: _PASSWORD)
+            
+            let anUnselectedStarImage = UIImage(named: "StarOff")!
+            let aSelectedStarImage = UIImage(named: "StarOn")!
+            
+            var anUnselectedSmileyImages = [UIImage]()
+            var aSelectedSmileyImages = [UIImage]()
+            
+            for anIndex in 1 ..< 6 {
+                
+                anUnselectedSmileyImages.append(UIImage(named: "Smiley\(anIndex)Off")!)
+                aSelectedSmileyImages.append(UIImage(named: "Smiley\(anIndex)On")!)
+                
+            }
+            
+            CloudCherrySDK().setCustomSmileyRatingAssets(anUnselectedSmileyImages, iSmileySelectedAssets: aSelectedSmileyImages)
+            CloudCherrySDK().setCustomStarRatingAssets(anUnselectedStarImage, iStarSelectedAsset: aSelectedStarImage)
+            CloudCherrySDK().showSurveyInController(self)
             
         }
         
     }
     
     
-    func statusButtonToggle(iButton: UIButton) {
+    func staticTokenSwitchToggled(iSwitch: UISwitch) {
         
-        if let aTappedButton = self.view.viewWithTag(iButton.tag) as? UIButton {
+        if (iSwitch.on) {
             
-            tappedButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-            tappedButton.backgroundColor = UIColor.clearColor()
-            tappedButton.layer.borderColor = UIColor.whiteColor().CGColor
+            staticTokenToggleLabel.text = "Static Token - ON"
             
-            tappedButton = iButton
+            staticTokenTextField = UITextField(frame: CGRect(x: 20, y: CGRectGetMaxY(staticTokenToggleLabel.frame) + 15, width: self.view.frame.width - 40, height: 20))
+            staticTokenTextField.attributedPlaceholder = NSAttributedString(string:"Enter Static Token",
+                                                                             attributes:[NSForegroundColorAttributeName: UIColor.whiteColor()])
+            staticTokenTextField.textColor = UIColor.whiteColor()
             
-            aTappedButton.setTitleColor(UIColor.redColor(), forState: .Normal)
-            aTappedButton.backgroundColor = UIColor.whiteColor()
-            aTappedButton.layer.borderColor = UIColor.redColor().CGColor
+            let aBottomBorder = CALayer()
+            let aWidth = CGFloat(1.0)
+            aBottomBorder.borderColor = UIColor.whiteColor().CGColor
+            aBottomBorder.frame = CGRect(x: 0, y: staticTokenTextField.frame.size.height - aWidth, width:  staticTokenTextField.frame.size.width, height: staticTokenTextField.frame.size.height)
             
-            if (iButton.tag == 1) {
-                
-                statusLabel.text = "Using Static Token"
-                
-                isDynamic = false
-                
-            } else {
-                
-                statusLabel.text = "Using Dynamic Token"
-                
-                isDynamic = true
-                
-            }
+            aBottomBorder.borderWidth = aWidth
+            staticTokenTextField.layer.addSublayer(aBottomBorder)
+            staticTokenTextField.layer.masksToBounds = true
+            
+            self.view.addSubview(staticTokenTextField)
+            
+        } else {
+            
+            staticTokenToggleLabel.text = "Static Token - OFF"
+            
+            staticTokenTextField.removeFromSuperview()
             
         }
         

@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		5gG3bGH9/e2BJPmI22S4jhWpwm4=
+		K2w8gGtZ5cptr14O1rg/nvTMwyM=
 		</data>
 		<key>Headers/CloudCherryiOSFramework-Swift.h</key>
 		<data>
-		fuymu67yC3IZX9/vWdjK+N2HRlg=
+		++/NV5T87vX0xYRm1qxe5ipXIFI=
 		</data>
 		<key>Headers/CloudCherryiOSFramework.h</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		rPraZBTvA9OXbBa5wZ/Y7dkUx0A=
+		Hb6uhZYjyAscyGME1FElG36YV0E=
 		</data>
 		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		Jz9T1iGo/TvwiaQqf+f8Wc6uQy8=
+		fs4puc4o0MdGhoIQN9aJf9KXbWI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,22 +39,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5gG3bGH9/e2BJPmI22S4jhWpwm4=
+			K2w8gGtZ5cptr14O1rg/nvTMwyM=
 			</data>
 			<key>hash2</key>
 			<data>
-			BxB2+heFunmWgXHOz8ZIrIEjnD5VYEAipenf4NPufIM=
+			Ci+TQrBlEU8tDDrt7MlYB2qVm+Xhr1Eu+qrg0Qv+Rz0=
 			</data>
 		</dict>
 		<key>Headers/CloudCherryiOSFramework-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fuymu67yC3IZX9/vWdjK+N2HRlg=
+			++/NV5T87vX0xYRm1qxe5ipXIFI=
 			</data>
 			<key>hash2</key>
 			<data>
-			/TQngZS35vwumzvfdsS2UsDIFrGTeK1TUEHJJBQtGLI=
+			MBygmuZSex8FNwpol7eYIJSG+2RuUzRjqj/3mNaptac=
 			</data>
 		</dict>
 		<key>Headers/CloudCherryiOSFramework.h</key>
@@ -72,22 +72,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rPraZBTvA9OXbBa5wZ/Y7dkUx0A=
+			Hb6uhZYjyAscyGME1FElG36YV0E=
 			</data>
 			<key>hash2</key>
 			<data>
-			6/Od0skSLs7PNHHLZK8tsL4lXc9hxWVz6HcI/OYt3Ow=
+			y8GdpKpm3NmhRVNJjZ39J29e7LqLlXiSavMWsz7uD6g=
 			</data>
 		</dict>
 		<key>Modules/CloudCherryiOSFramework.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Jz9T1iGo/TvwiaQqf+f8Wc6uQy8=
+			fs4puc4o0MdGhoIQN9aJf9KXbWI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Q5b1H2a0xvP2KorhPW3ClWzl0Vd/e0UQGmPIzG4dvGg=
+			vzBWi4ybq+ZPM+FTq7SbUmLpdtX/6zdkY1ZEZKngMXI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

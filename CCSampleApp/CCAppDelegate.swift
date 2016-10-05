@@ -8,6 +8,8 @@
 
 import UIKit
 
+//let aCloudCherrySDK = CloudCherrySDK()
+
 @UIApplicationMain
 class CCAppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,11 +18,12 @@ class CCAppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
         // Override point for customization after application launch.
         
         
         NSThread.sleepForTimeInterval(2.0)
-
+        
         
         // Setting White Status Bar
         
