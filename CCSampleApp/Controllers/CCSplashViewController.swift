@@ -145,14 +145,14 @@ class CCSplashViewController: UIViewController {
                 
             } else {
                 
-                CloudCherrySDK().setStaticToken(staticTokenTextField.text!)
-                CloudCherrySDK().showSurveyInController(self)
+                SurveyCC().setStaticToken(staticTokenTextField.text!)
+                SurveyCC().showSurveyInController(self)
                 
             }
             
         } else {
             
-            CloudCherrySDK().setCredentials(_USERNAME, iPassword: _PASSWORD)
+            SurveyCC().setCredentials(_USERNAME, iPassword: _PASSWORD)
             
             let anUnselectedStarImage = UIImage(named: "StarOff")!
             let aSelectedStarImage = UIImage(named: "StarOn")!
@@ -167,9 +167,15 @@ class CCSplashViewController: UIViewController {
                 
             }
             
-            CloudCherrySDK().setCustomSmileyRatingAssets(anUnselectedSmileyImages, iSmileySelectedAssets: aSelectedSmileyImages)
-            CloudCherrySDK().setCustomStarRatingAssets(anUnselectedStarImage, iStarSelectedAsset: aSelectedStarImage)
-            CloudCherrySDK().showSurveyInController(self)
+            var aPrefillDictionary = Dictionary<String, AnyObject>()
+            
+            aPrefillDictionary = ["prefillEmail" : "abc@gmail.com", "prefillMobile" : "9900990000"]
+            
+            SurveyCC().setCustomSmileyRatingAssets(anUnselectedSmileyImages, iSmileySelectedAssets: aSelectedSmileyImages)
+            SurveyCC().setCustomStarRatingAssets(anUnselectedStarImage, iStarSelectedAsset: aSelectedStarImage)
+            SurveyCC().setPrefill(aPrefillDictionary)
+            SurveyCC().setCustomTextStyle(.CC_RECTANGLE)
+            SurveyCC().showSurveyInController(self)
             
         }
         
@@ -190,7 +196,7 @@ class CCSplashViewController: UIViewController {
             let aBottomBorder = CALayer()
             let aWidth = CGFloat(1.0)
             aBottomBorder.borderColor = UIColor.whiteColor().CGColor
-            aBottomBorder.frame = CGRect(x: 0, y: staticTokenTextField.frame.size.height - aWidth, width:  staticTokenTextField.frame.size.width, height: staticTokenTextField.frame.size.height)
+            aBottomBorder.frame = CGRect(x: 0, y: staticTokenTextField.frame.size.height - aWidth, width: staticTokenTextField.frame.size.width, height: staticTokenTextField.frame.size.height)
             
             aBottomBorder.borderWidth = aWidth
             staticTokenTextField.layer.addSublayer(aBottomBorder)

@@ -92,66 +92,14 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 # endif
 #endif
 #if defined(__has_feature) && __has_feature(modules)
-@import ObjectiveC;
 @import UIKit;
 @import CoreGraphics;
+@import ObjectiveC;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
 @class UIImage;
-@class UIViewController;
-
-SWIFT_CLASS("_TtC23CloudCherryiOSFramework14CloudCherrySDK")
-@interface CloudCherrySDK : NSObject
-
-/// Initalize the CloudCherry SDK with username and password. This method has to be called mandatorily.
-///
-/// \param iUsername Username for user authentication
-///
-/// \param iPassword Password for user authentication
-- (void)setCredentials:(NSString * _Nonnull)iUsername iPassword:(NSString * _Nonnull)iPassword;
-
-/// Initializes SDK using Static token generated from Dashboard
-///
-/// \param iStaticToken Static Token for authentication
-- (void)setStaticToken:(NSString * _Nonnull)iStaticToken;
-
-/// Sets prefill details. This method is optional
-///
-/// \param iEmail Sets EMail prefill string
-///
-/// \param iMobileNumber Sets Mobile Number prefill string
-- (void)setPrefill:(NSString * _Nonnull)iEmail iMobileNumber:(NSString * _Nonnull)iMobileNumber;
-
-/// Sets Config Data. This method is optional
-///
-/// \param iValidUses Sets number of valis uses the token can be used
-///
-/// \param iMobileNumber Sets location string
-- (void)setConfig:(NSInteger)iValidUses iLocation:(NSString * _Nonnull)iLocation;
-
-/// Sets custom assets for Smiley Rating Question. This method is optional. If not called, emojis will be used
-///
-/// \param iSmileyUnselectedAssets Array of unselected UIImage assets to be provided in 'Sad' to 'Happy' order
-///
-/// \param iSmileySelectedAssets Array of selected UIImage assets to be provided in 'Sad' to 'Happy' order
-- (void)setCustomSmileyRatingAssets:(NSArray<UIImage *> * _Nonnull)iSmileyUnselectedAssets iSmileySelectedAssets:(NSArray<UIImage *> * _Nonnull)iSmileySelectedAssets;
-
-/// Sets Config Data. This method is optional
-///
-/// \param iStarUnselectedAsset Selected UIImage asset to be provided
-///
-/// \param iStarSelectedAsset Unselected UIImage asset to be provided
-- (void)setCustomStarRatingAssets:(UIImage * _Nonnull)iStarUnselectedAsset iStarSelectedAsset:(UIImage * _Nonnull)iStarSelectedAsset;
-
-/// Presenting the CloudCherry Survey
-///
-/// \param iController The Parent Controller on which the Survey has to be presented.
-- (void)showSurveyInController:(UIViewController * _Nonnull)iController;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class NSCoder;
 @class UITouch;
 @class UIEvent;
@@ -207,6 +155,56 @@ SWIFT_PROTOCOL("_TtP23CloudCherryiOSFramework23FloatRatingViewDelegate_")
 
 /// Returns the rating value as the user pans
 - (void)floatRatingView:(FloatRatingView * _Nonnull)ratingView isUpdating:(float)rating;
+@end
+
+@class UIViewController;
+
+SWIFT_CLASS("_TtC23CloudCherryiOSFramework8SurveyCC")
+@interface SurveyCC : NSObject
+
+/// Initalize the CloudCherry SDK with username and password. This method has to be called mandatorily.
+///
+/// \param iUsername Username for user authentication
+///
+/// \param iPassword Password for user authentication
+- (void)setCredentials:(NSString * _Nonnull)iUsername iPassword:(NSString * _Nonnull)iPassword;
+
+/// Initializes SDK using Static token generated from Dashboard
+///
+/// \param iStaticToken Static Token for authentication
+- (void)setStaticToken:(NSString * _Nonnull)iStaticToken;
+
+/// Sets prefill details. This method is optional
+///
+/// \param iPrefillDictionary Sets custom prefill key-values
+- (void)setPrefill:(NSDictionary<NSString *, id> * _Nonnull)iPrefillDictionary;
+
+/// Sets Config Data. This method is optional
+///
+/// \param iValidUses Sets number of valis uses the token can be used
+///
+/// \param iMobileNumber Sets location string
+- (void)setConfig:(NSInteger)iValidUses iLocation:(NSString * _Nonnull)iLocation;
+
+/// Sets custom assets for Smiley Rating Question. This method is optional. If not called, emojis will be used
+///
+/// \param iSmileyUnselectedAssets Array of unselected UIImage assets to be provided in 'Sad' to 'Happy' order
+///
+/// \param iSmileySelectedAssets Array of selected UIImage assets to be provided in 'Sad' to 'Happy' order
+- (void)setCustomSmileyRatingAssets:(NSArray<UIImage *> * _Nonnull)iSmileyUnselectedAssets iSmileySelectedAssets:(NSArray<UIImage *> * _Nonnull)iSmileySelectedAssets;
+
+/// Sets Config Data. This method is optional
+///
+/// \param iStarUnselectedAsset Selected UIImage asset to be provided
+///
+/// \param iStarSelectedAsset Unselected UIImage asset to be provided
+- (void)setCustomStarRatingAssets:(UIImage * _Nonnull)iStarUnselectedAsset iStarSelectedAsset:(UIImage * _Nonnull)iStarSelectedAsset;
+
+/// Presenting the CloudCherry Survey
+///
+/// \param iController The Parent Controller on which the Survey has to be presented.
+- (void)showSurveyInController:(UIViewController * _Nonnull)iController;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 #pragma clang diagnostic pop
